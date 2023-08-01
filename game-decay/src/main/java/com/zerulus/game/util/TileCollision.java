@@ -33,14 +33,13 @@ public class TileCollision {
             int yt;
 
             for(int c = 0; c < 4; c++) {
-                
                 xt = (int) ( (e.getPos().x + ax) + (c % 2) * e.getBounds().getWidth() + e.getBounds().getXOffset()) / 64;
                 yt = (int) ( (e.getPos().y + ay) + (c / 2) * e.getBounds().getHeight() + e.getBounds().getYOffset()) / 64;
 
                 if(xt <= 0 || yt <= 0 || xt + (yt * TileMapObj.height) < 0 || xt + (yt * TileMapObj.height) > (TileMapObj.height * TileMapObj.width) - 2) {
                     return true;
-                } 
-                
+                }
+
                 if(TileMapObj.event_blocks[xt + (yt * TileMapObj.height)] instanceof Block) {
                     Block block = TileMapObj.event_blocks[xt + (yt * TileMapObj.height)];
                     if(block instanceof HoleBlock) {
@@ -68,7 +67,7 @@ public class TileCollision {
             if(TileMapObj.event_blocks[nextXt + (nextYt * TileMapObj.height)] instanceof HoleBlock){
                 Block nextblock = TileMapObj.event_blocks[nextXt + (nextYt * TileMapObj.height)];
 
-                if(e.getPos().x + e.getBounds().getXOffset() > block.getPos().x 
+                if(e.getPos().x + e.getBounds().getXOffset() > block.getPos().x
                 && e.getPos().y + e.getBounds().getYOffset() > block.getPos().y
                 && nextblock.getWidth() + nextblock.getPos().x > e.getBounds().getWidth() + (e.getPos().x + e.getBounds().getXOffset())
                 && nextblock.getHeight() + nextblock.getPos().y > e.getBounds().getHeight() + (e.getPos().y + e.getBounds().getYOffset())) {

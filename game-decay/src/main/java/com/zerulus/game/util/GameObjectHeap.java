@@ -4,9 +4,8 @@ import java.util.ArrayList;
 
 import com.zerulus.game.entity.GameObject;
 
-// Maybe Quicksort? 
+// Maybe Quicksort?
 public class GameObjectHeap extends ArrayList<GameObjectKey> {
-
     private static final long serialVersionUID = 1L;
 
 	public void buildHeap() {

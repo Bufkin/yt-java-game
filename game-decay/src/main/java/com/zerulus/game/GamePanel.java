@@ -16,7 +16,6 @@ import com.zerulus.game.util.KeyHandler;
 
 
 public class GamePanel extends JPanel implements Runnable {
-
     public static final long serialVersionUID = 1L;
 
     public static int width;
@@ -103,7 +102,7 @@ public class GamePanel extends JPanel implements Runnable {
                 lastUpdateTime += TBU;
                 updateCount++;
                 tickCount++;
-                // (^^^^) We use this varible for the soul purpose of displaying it
+                // (^^^^) We use this variable for the soul purpose of displaying it
             }
 
             if ((now - lastUpdateTime) > TBU) {
@@ -143,7 +142,6 @@ public class GamePanel extends JPanel implements Runnable {
 
                 now = System.nanoTime();
             }
-
         }
     }
 
@@ -170,7 +168,5 @@ public class GamePanel extends JPanel implements Runnable {
             g2.dispose();
             bs.show();
         } while(bs.contentsLost());
-        
     }
-
 }

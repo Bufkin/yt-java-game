@@ -27,9 +27,7 @@ public class Window extends JFrame {
         bs = getBufferStrategy();
 
         gp = new GamePanel(bs, 1280, 720);
-        //add(gp);
+        add(gp);
         setContentPane(gp);
-        
     }
-
 }

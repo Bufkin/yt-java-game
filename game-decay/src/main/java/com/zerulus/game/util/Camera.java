@@ -9,7 +9,6 @@ import com.zerulus.game.math.AABB;
 import java.awt.Graphics;
 
 public class Camera {
-
     private AABB collisionCam;
 
     private boolean up;
@@ -68,7 +67,7 @@ public class Camera {
                     && (e.getPos().getWorldVar().y + dy) > Vector2f.getWorldVarY(GamePanel.height / 2 - tileSize * 2)) {
                     PlayState.map.y += dy;
                     collisionCam.getPos().y += dy;
-                //bounds.getPos().y += dy;
+                // bounds.getPos().y += dy;
                 }
             }
         } else {
@@ -78,7 +77,7 @@ public class Camera {
                 collisionCam.getPos().x += dx;
             }
 
-            if(collisionCam.getPos().y + dy > 0 
+            if(collisionCam.getPos().y + dy > 0
             && collisionCam.getPos().getWorldVar().y + dy < Vector2f.getWorldVarY(heightLimit - collisionCam.getHeight()) - tileSize) {
                 PlayState.map.y += dy;
                 collisionCam.getPos().y += dy;
@@ -215,10 +214,9 @@ public class Camera {
         g.drawRect((int) collisionCam.getPos().getWorldVar().x, (int) collisionCam.getPos().getWorldVar().y, (int) collisionCam.getWidth(),
                 (int) collisionCam.getHeight()); */
 
-        
-         /* g.setColor(Color.magenta); 
-         g.drawLine(GamePanel.width / 2, 0, GamePanel.width / 2, GamePanel.height); 
+
+         /* g.setColor(Color.magenta);
+         g.drawLine(GamePanel.width / 2, 0, GamePanel.width / 2, GamePanel.height);
          g.drawLine(0, GamePanel.height / 2, GamePanel.width,GamePanel.height / 2); */
-        
     }
 }

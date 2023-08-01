@@ -8,7 +8,6 @@ import java.util.Stack;
 import java.util.ArrayList;
 
 public class AABBTree {
-
     private ArrayList<AABBNode> nodeList;
     private HashMap<GameObject, AABBNode> nodeIndex;
 
@@ -28,21 +27,19 @@ public class AABBTree {
         nodeIndex.put(go, index);
     }
 
-	// TODO: fix inifite loop. check if tree is correctly created
+	// TODO: fix infinite loop. check if tree is correctly created
     public AABBNode insertLeaf(AABBNode newNode) {
 
         // make sure we are inserting a new leaf?
-
         if(nodeList.size() == 1) {
             rootIndex = newNode.index;
             System.out.println("WARNING: This is the root node");
             return newNode;
 		}
-		
+
 		// looking for a suitable leaf node
         int treeIndex = rootIndex;
         while(!nodeList.get(treeIndex).isLeaf()) {
-
 			AABB aabb = newNode.aabb; // node to insert
             AABBNode treeNode = nodeList.get(treeIndex); // node that could be root or parent/grand
             AABBNode rightNode = nodeList.get(treeNode.right); // node that could be siblings / cousins or nil
@@ -99,7 +96,7 @@ public class AABBTree {
                 nodeList.get(oldParentIndex).right = newParent.index;
             }
 		}
-		
+
 		nodeList.add(newParent);
 
         fixUpwardsTree(newNode.parent);
@@ -110,7 +107,6 @@ public class AABBTree {
         AABBNode node = nodeIndex.get(go);
         removeLeaf(node);
         nodeIndex.remove(go);
-
     }
 
     public void update(GameObject go) {
@@ -151,7 +147,7 @@ public class AABBTree {
         int parentIndex = node.parent;
         AABBNode parent = nodeList.get(parentIndex);
         int grandParentIndex = parent.parent;
-        
+
         int siblingIndex = parent.left == node.index ? parent.right : parent.left;
         AABBNode sibling = nodeList.get(siblingIndex);
 
@@ -165,7 +161,7 @@ public class AABBTree {
             nodeList.get(siblingIndex).parent = grandParent.index;
 
             fixUpwardsTree(grandParent.index);
-            
+
         } else {
             rootIndex = siblingIndex;
             nodeList.get(siblingIndex).parent = -1;
@@ -175,7 +171,6 @@ public class AABBTree {
     }
 
     public void updateLeaf(AABBNode node, AABB aabb) {
-        
         if(node.aabb == aabb) return;
 
         removeLeaf(node);
@@ -186,7 +181,7 @@ public class AABBTree {
     public void fixUpwardsTree(int nodeIndex) {
         while(nodeIndex != -1) {
             AABBNode node = nodeList.get(nodeIndex);
-            
+
             AABBNode leftNode = nodeList.get(node.left);
             AABBNode rightNode = nodeList.get(node.right);
             nodeList.get(nodeIndex).aabb = leftNode.aabb.merge(rightNode.aabb);
@@ -194,14 +189,14 @@ public class AABBTree {
             nodeIndex = node.parent;
         }
 	}
-	
+
 	public String toString() {
 		String result = "[\n";
 		ArrayList<AABBNode> tree = nodeList;
 
 		for(int i = 0; i < tree.size(); i++) {
 			result += "  " + i + ":{ " + tree.get(i).go + ", " +
-				tree.get(i).left + ", " + tree.get(i).right + 
+				tree.get(i).left + ", " + tree.get(i).right +
 				", " + tree.get(i).parent + " }\n";
 		}
 
@@ -209,7 +204,6 @@ public class AABBTree {
 	}
 
     private class AABBNode {
-
         public AABB aabb;
         public GameObject go;
 
