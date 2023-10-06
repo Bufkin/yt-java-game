@@ -94,7 +94,7 @@ public class BuildOptionUI {
             for (int j = 0; j < slotsPos[0].length; j++) {
                 img  = i > 0 ? 1 : j;
                 slotsPos[i][j] = new Vector2f(
-                    buildSlotX + ((size + 8) - slotsVert[img].getWidth()) / 2, 
+                    buildSlotX + ((size + 8) - slotsVert[img].getWidth()) / 2,
                     buildSlotY + ((size + 10) * i) + ((size + 18) * (j % 2)) - slotsVert[img].getHeight());
             }
         }
@@ -119,7 +119,5 @@ public class BuildOptionUI {
                 }
             });
         }
-        
     }
-
 }
