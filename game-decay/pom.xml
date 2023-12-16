@@ -1,200 +1,200 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.zerulus.game</groupId>
-  <artifactId>game-decay</artifactId>
-  <version>Decay</version>
-  <properties>
-    <maven.compiler.source>19</maven.compiler.source>
-    <maven.compiler.target>19</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>5.10.0</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins
+         xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zerulus.game</groupId>
+    <artifactId>game-decay</artifactId>
+    <version>Decay</version>
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins
           </groupId>
-          <artifactId>maven-checkstyle-plugin
+                    <artifactId>maven-checkstyle-plugin
           </artifactId>
-          <version>3.3.0
+                    <version>3.3.0
           </version>
-          <dependencies>
-            <dependency>
-              <groupId>com.puppycrawl.tools</groupId>
-    <artifactId>checkstyle</artifactId>
-    <version>10.12.4</version>
-            </dependency>
-            <groupId>com.github.stefanbirkner</groupId>
-    <artifactId>system-rules</artifactId>
-    <version>1.19.0</version>
-    <scope>test</scope>
-          </dependencies>
-          <configuration>
-            <configLocation>com/github/ngeor/checkstyle.xml
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>10.12.4</version>
+                        </dependency>
+                        <groupId>com.github.stefanbirkner</groupId>
+                        <artifactId>system-rules</artifactId>
+                        <version>1.19.0</version>
+                        <scope>test</scope>
+                    </dependencies>
+                    <configuration>
+                        <configLocation>com/github/ngeor/checkstyle.xml
             </configLocation>
-            <includeTestSourceDirectory>true
+                        <includeTestSourceDirectory>true
             </includeTestSourceDirectory>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins
         </groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.10</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo
         </groupId>
-        <artifactId>exec-maven-plugin
+                <artifactId>exec-maven-plugin
         </artifactId>
-        <version>3.1.0
+                <version>3.3.0
         </version>
-        <configuration>
-          <mainClass>com.zerulus.game.GameLauncher
+                <configuration>
+                    <mainClass>com.zerulus.game.GameLauncher
           </mainClass>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins
         </groupId>
-        <artifactId>maven-jar-plugin
+                <artifactId>maven-jar-plugin
         </artifactId>
-        <version>3.3.0
+                <version>3.3.0
         </version>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>com.zerulus.game.GameLauncher
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.zerulus.game.GameLauncher
               </mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins
         </groupId>
-        <artifactId>maven-javadoc-plugin
+                <artifactId>maven-javadoc-plugin
         </artifactId>
-        <version>3.5.0
+                <version>3.6.3
         </version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins
         </groupId>
-        <artifactId>maven-checkstyle-plugin
+                <artifactId>maven-checkstyle-plugin
         </artifactId>
-        <configuration>
-          <configLocation>com/github/ngeor/checkstyle.xml
+                <configuration>
+                    <configLocation>com/github/ngeor/checkstyle.xml
           </configLocation>
-          <includeTestSourceDirectory>true
+                    <includeTestSourceDirectory>true
           </includeTestSourceDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
-  <profiles>
-    <profile>
-      <id>jacoco
-      </id>
-      <activation>
-        <property>
-          <name>env.TRAVIS
-          </name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.jacoco
-            </groupId>
-            <artifactId>jacoco-maven-plugin
-            </artifactId>
-            <executions>
-              <execution>
-                <id>prepare-agent
-                </id>
-                <phase>validate
-                </phase>
-                <goals>
-                  <goal>prepare-agent
-                  </goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>report
-                </id>
-                <phase>test
-                </phase>
-                <goals>
-                  <goal>report
-                  </goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
+                </configuration>
+            </plugin>
         </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>travis
+    </reporting>
+    <profiles>
+        <profile>
+            <id>jacoco
       </id>
-      <activation>
-        <property>
-          <name>env.TRAVIS
+            <activation>
+                <property>
+                    <name>env.TRAVIS
           </name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco
             </groupId>
-            <artifactId>maven-checkstyle-plugin
+                        <artifactId>jacoco-maven-plugin
             </artifactId>
-            <executions>
-              <execution>
-                <id>checkstyle
+                        <executions>
+                            <execution>
+                                <id>prepare-agent
                 </id>
-                <phase>test
+                                <phase>validate
                 </phase>
-                <goals>
-                  <goal>check
+                                <goals>
+                                    <goal>prepare-agent
                   </goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.eluder.coveralls
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report
+                </id>
+                                <phase>test
+                </phase>
+                                <goals>
+                                    <goal>report
+                  </goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>travis
+      </id>
+            <activation>
+                <property>
+                    <name>env.TRAVIS
+          </name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins
             </groupId>
-            <artifactId>coveralls-maven-plugin
+                        <artifactId>maven-checkstyle-plugin
             </artifactId>
-            <version>4.3.0
+                        <executions>
+                            <execution>
+                                <id>checkstyle
+                </id>
+                                <phase>test
+                </phase>
+                                <goals>
+                                    <goal>check
+                  </goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.eluder.coveralls
+            </groupId>
+                        <artifactId>coveralls-maven-plugin
+            </artifactId>
+                        <version>4.3.0
             </version>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
