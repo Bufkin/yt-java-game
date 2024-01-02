@@ -23,7 +23,7 @@ import java.util.Random;
 public class SimplexNoise_octave {  // Simplex noise in 2D, 3D and 4D
 
 	public static int RANDOMSEED = 0;
-	private static int NUMBEROFSWAPS = 400;  
+	private static int NUMBEROFSWAPS = 400;
 
 	private static Grad grad3[] = {new Grad(1,1,0),new Grad(-1,1,0),new Grad(1,-1,0),new Grad(-1,-1,0),
 								   new Grad(1,0,1),new Grad(-1,0,1),new Grad(1,0,-1),new Grad(-1,0,-1),
@@ -87,7 +87,7 @@ public class SimplexNoise_octave {  // Simplex noise in 2D, 3D and 4D
 	}
 
 	private static double dot(Grad g, double x, double y) {
-		return g.x * x + g.y * y; 
+		return g.x * x + g.y * y;
 	}
 
   // 2D simplex noise

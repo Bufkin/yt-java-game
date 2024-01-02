@@ -25,9 +25,9 @@ public class TileManager {
     private int blockWidth;
     private int blockHeight;
     private MaterialManager mm;
-    private int width; 
+    private int width;
     private int height;
-    
+
     private String genMap;
     private String solid;
     private int chuckSize;
@@ -48,7 +48,7 @@ public class TileManager {
         addTileMap(path, blockWidth, blockHeight, cam);
     }
 
-    public TileManager(SpriteSheet spritesheet, int chuckSize, Camera cam, MaterialManager mm) { 
+    public TileManager(SpriteSheet spritesheet, int chuckSize, Camera cam, MaterialManager mm) {
         this();
         addTileMap(spritesheet, 64, 64, chuckSize, cam, mm);
 
@@ -72,7 +72,7 @@ public class TileManager {
         addTileMap(spritesheet, blockWidth, blockHeight, chuckSize, cam, mm);
     }
 
-    
+
     private void addTileMap(SpriteSheet spritesheet, int blockWidth, int blockHeight, int chuckSize, Camera cam, MaterialManager mm) {
         this.cam = cam;
         this.mm = mm;
@@ -87,7 +87,7 @@ public class TileManager {
         cam.setTileSize(blockWidth);
         String[] data = new String[3];
         TileMapGenerator tmg = new TileMapGenerator(chuckSize, blockWidth, mm);
-        
+
         // For now
         data[0] = "";
 
@@ -137,7 +137,7 @@ public class TileManager {
             tileWidth = Integer.parseInt(eElement.getAttribute("tilewidth"));
             tileHeight = Integer.parseInt(eElement.getAttribute("tileheight"));
             tileColumns =  Integer.parseInt(eElement.getAttribute("columns"));
-            
+
             this.columns = tileColumns;
             this.file = imagePath;
             sprite = new SpriteSheet("tile/" + imagePath + ".png", tileWidth, tileHeight);
@@ -175,7 +175,7 @@ public class TileManager {
 
     public NormBlock[] getNormalTile(int id) {
         int normMap = 1;
-        if(tm.size() < 2) normMap = 0; 
+        if(tm.size() < 2) normMap = 0;
         NormBlock[] block = new NormBlock[9];
 
         int i = 0;
@@ -193,7 +193,7 @@ public class TileManager {
     public void render(Graphics2D g) {
         if(cam == null)
             return;
-            
+
         for(int i = 0; i < tm.size(); i++) {
             tm.get(i).render(g, cam.getBounds());
         }

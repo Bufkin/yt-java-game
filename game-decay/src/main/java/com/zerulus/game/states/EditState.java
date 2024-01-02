@@ -42,14 +42,14 @@ public class EditState extends GameState {
         btnEnemy1 = new Button("TinyMon", new Vector2f(64 + 24, 64 + 24), 32, 24, imgButton, new Vector2f(64, 64), 220, 75);
         btnEnemy1.addEvent(e -> {
             selection = 1;
-            entityList[1] = new TinyMon(cam, new SpriteSheet(enemySheet.getSprite(0, 0, 128, 32), "tiny monster", 16, 16), 
+            entityList[1] = new TinyMon(cam, new SpriteSheet(enemySheet.getSprite(0, 0, 128, 32), "tiny monster", 16, 16),
 							new Vector2f((GamePanel.width / 2) - 32 + 150, 0 + (GamePanel.height / 2) - 32 + 150), 48);
         });
 
         btnEnemy2 = new Button("TinyBoar", new Vector2f(64 + 24, (64 + 24) * 2), 32, 24, imgButton, new Vector2f(64, 64 + 85), 235, 75);
         btnEnemy2.addEvent(e -> {
             selection = 2;
-            entityList[2] = new TinyMon(cam, new SpriteSheet(enemySheet.getSprite(0, 1, 128, 32), "tiny boar", 16, 16), 
+            entityList[2] = new TinyMon(cam, new SpriteSheet(enemySheet.getSprite(0, 1, 128, 32), "tiny boar", 16, 16),
 							new Vector2f((GamePanel.width / 2) - 32 + 150, 0 + (GamePanel.height / 2) - 32 + 150), 48);
         });
     }
@@ -63,10 +63,10 @@ public class EditState extends GameState {
     public void input(MouseHandler mouse, KeyHandler key) {
         btnEnemy1.input(mouse, key);
         btnEnemy2.input(mouse, key);
-		
+
         if(mouse.getButton() == 1 && !clicked && entityList[selection] != null && !btnEnemy1.getHovering() && !btnEnemy2.getHovering()) {
             GameObject go = entityList[selection];
-            go.setPos(new Vector2f(mouse.getX() - go.getSize() / 2 + cam.getPos().x + 64, 
+            go.setPos(new Vector2f(mouse.getX() - go.getSize() / 2 + cam.getPos().x + 64,
                                     mouse.getY() - go.getSize() / 2 + cam.getPos().y + 64));
 
             if(!ps.getGameObjects().contains(go)) {

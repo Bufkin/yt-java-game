@@ -35,7 +35,7 @@ public class PlayState extends GameState {
 
 	public PlayState(GameStateManager gsm, Camera cam) {
 		super(gsm);
-		
+
 		map = new Vector2f();
 		Vector2f.setWorldVar(map.x, map.y);
 		this.cam = cam;
@@ -123,7 +123,7 @@ public class PlayState extends GameState {
 					gameObject.buildHeap();
 					//System.out.println(gameObject);
 				}
-				
+
 				player.update(time);
 				pui.update(time);
 			}

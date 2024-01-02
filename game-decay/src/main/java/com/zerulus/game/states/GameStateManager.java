@@ -46,7 +46,7 @@ public class GameStateManager {
 
         ui = new SpriteSheet("ui/ui.png", 64, 64);
         button = new SpriteSheet("ui/buttons.png", 122, 57);
-        
+
 
         cam = new Camera(new AABB(new Vector2f(-64, -64), GamePanel.width + 128, GamePanel.height + 128));
 
@@ -107,12 +107,12 @@ public class GameStateManager {
     }
 
     public void input(MouseHandler mouse, KeyHandler key) {
-        
+
         for (int i = 0; i < states.length; i++) {
             if (states[i] != null) {
                 states[i].input(mouse, key);
             }
-        }        
+        }
     }
 
     public void render(Graphics2D g) {

@@ -11,7 +11,7 @@ import com.zerulus.game.ui.Button;
 import com.zerulus.game.GamePanel;
 
 public class PauseState extends GameState {
-    
+
     private Button btnResume;
     private Button btnExit;
     private Font font;
@@ -28,7 +28,7 @@ public class PauseState extends GameState {
 
         btnResume.addHoverImage(btnResume.createButton("RESUME", imgHover, font, btnResume.getWidth(), btnResume.getHeight(), 32, 20));
         btnExit.addHoverImage(btnExit.createButton("EXIT", imgHover, font, btnExit.getWidth(), btnExit.getHeight(), 32, 20));
-        
+
         btnResume.addEvent(e -> {
             gsm.pop(GameStateManager.PAUSE);
         });

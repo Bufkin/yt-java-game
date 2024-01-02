@@ -34,7 +34,7 @@ public class GameOverState extends GameState {
 
         btnReset.addHoverImage(btnReset.createButton("RESTART", imgHover, font, btnReset.getWidth(), btnReset.getHeight(), 32, 20));
         btnQuit.addHoverImage(btnQuit.createButton("QUIT", imgHover, font, btnQuit.getWidth(), btnQuit.getHeight(), 32, 20));
-        
+
         btnReset.addEvent(e -> {
             gsm.add(GameStateManager.PLAY);
             gsm.pop(GameStateManager.GAMEOVER);

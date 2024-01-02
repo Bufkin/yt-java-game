@@ -7,7 +7,7 @@ public class TileMapGenerator {
 
     public String base;
     private int[] data;
-    
+
     public String onTop;
     private int[] layer;
 
@@ -18,7 +18,7 @@ public class TileMapGenerator {
     // could set this as enum however that seems a little too much.
     // could have a class with all the different types of tiles but that also seems a little too much.
     // could change tileset and would have to change the numbers anyways.
-    // the best way would probably create a program that labels tiles with a mouse click, 
+    // the best way would probably create a program that labels tiles with a mouse click,
     // however that's over kill.
 
     private int[] grass = {52, 53, 54};
@@ -55,11 +55,11 @@ public class TileMapGenerator {
             for(int j = 0; j < chuckSize; j++) {
                 int temp = data[j + i * chuckSize];
                 if(temp != 29) continue;
-                
+
                 for(int x = 1; x > -2; x--) {
                     for(int y = 1; y > -2; y--) {
                         if(x == 0 && y == 0) continue;
-                        
+
                         int c = ((j + y) + (i + x) * chuckSize);
                         if(c > 0 && c < data.length && data[c] == 35) {
                             layer[c] = x + 26 + ((y + 1) * 9);

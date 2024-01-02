@@ -15,7 +15,7 @@ public class Matrix {
 			for(int j = 0; j < bMatrix[0].length; j++) {
 				temp = 0;
 				for(int k = 0; k < aMatrix[0].length; k++) {
-					temp += aMatrix[i][k] * bMatrix[k][j]; 
+					temp += aMatrix[i][k] * bMatrix[k][j];
 				}
 				outMatrix[i][j] = temp;
 			}
@@ -43,7 +43,7 @@ public class Matrix {
         }
 
 		float[][] outMatrix = new float[aMatrix.length][bMatrix[0].length];
-        
+
 		for(int i = 0; i < aMatrix.length; i++) {
 			for(int j = 0; j < bMatrix[0].length; j++) {
 				outMatrix[i][j] = aMatrix[i][j] + bMatrix[i][j];
@@ -108,7 +108,7 @@ public class Matrix {
 
         return det;
     }
-    
+
     private static float[][] minor(float[][] matrix, int row, int col) {
         float[][] outMatrix = new float[matrix.length - 1][matrix[0].length - 1];
 

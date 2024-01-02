@@ -20,7 +20,7 @@ public class Save {
     public Save(TileManager tm) {
         System.out.println("Saving map...");
         saveMap(tm);
-        
+
     }
 
     private void saveMap(TileManager tm) {

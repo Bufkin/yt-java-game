@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import com.zerulus.game.entity.GameObject;
 
 public class AABB {
-
     private Vector2f pos;
     private float xOffset = 0;
     private float yOffset = 0;
@@ -174,8 +173,8 @@ public class AABB {
 
         Vector2f pos = new Vector2f(minX, minY);
         return new AABB(pos, maxW, maxH);
-	} 
-	
+	}
+
 	public String toString() {
 
 		String x = Float.toString(pos.x);
